@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {{ super() }}
+{#    {{ data.age }}#}
+{#    {{ data['age'] }}#}
+    {% if data.age < 18 %}
+{#        {{ data.name }}#}
+    {% elif data.age == 18 %}
+        {{ data | length() }}
+        {{ data.school | default(data.school) | default('未名')}}
+{#        管道命令#}
+    {% else %}
+{#        {{ data.age }}#}
+    {% endif %}
+{% endblock %}
